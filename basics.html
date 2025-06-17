@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自然语言处理知识库 - 基础知识</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">NLP知识库</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="basics.html" class="active">基础知识</a></li>
+          <li><a href="models.html">模型与算法</a></li>
+          <li><a href="applications.html">应用场景</a></li>
+          <li><a href="blog.html">技术博客</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>NLP基础知识</h1>
+    <p>了解自然语言处理的核心概念、发展历史和基础理论</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+        <article id="intro" class="content-card">
+          <h2>什么是自然语言处理？</h2>
+          <p>自然语言处理（Natural Language Processing，简称NLP）是人工智能的一个子领域，专注于计算机与人类语言之间的交互。它结合了计算机科学、人工智能和语言学，使计算机能够理解、解释和生成人类语言。</p>
+          <p>NLP技术使计算机能够：</p>
+          <ul>
+            <li>理解文本和语音中的含义</li>
+            <li>识别语言中的情感和意图</li>
+            <li>翻译不同语言之间的文本</li>
+            <li>生成人类可读的文本内容</li>
+            <li>从非结构化文本中提取信息</li>
+          </ul>
+        </article>
+
+        <article id="history" class="content-card">
+          <h2>NLP的发展历史</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">1950年代</div>
+              <div class="timeline-content">
+                <h3>早期机器翻译</h3>
+                <p>NLP研究始于冷战时期，最初目标是实现俄语到英语的自动翻译。图灵测试被提出，作为评估机器智能的标准。</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">1960-1970年代</div>
+              <div class="timeline-content">
+                <h3>基于规则的系统</h3>
+                <p>研究者开发了基于语法规则和词典的系统，如ELIZA对话系统，能够模拟心理治疗师与患者的对话。</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">1980-1990年代</div>
+              <div class="timeline-content">
+                <h3>统计方法兴起</h3>
+                <p>随着计算能力的提升和语料库的增大，基于统计的方法开始取代规则系统，如IBM的统计机器翻译模型。</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2000年代</div>
+              <div class="timeline-content">
+                <h3>机器学习时代</h3>
+                <p>支持向量机、条件随机场等机器学习方法被广泛应用于NLP任务，性能大幅提升。</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2010年代</div>
+              <div class="timeline-content">
+                <h3>深度学习革命</h3>
+                <p>神经网络模型，特别是循环神经网络(RNN)、长短期记忆网络(LSTM)和注意力机制的应用，推动了NLP技术的飞跃。</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2018年至今</div>
+              <div class="timeline-content">
+                <h3>预训练语言模型时代</h3>
+                <p>BERT、GPT系列、T5等大规模预训练语言模型的出现，使NLP性能达到前所未有的水平，在多种任务上接近或超越人类表现。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article id="concepts" class="content-card">
+          <h2>NLP的核心概念</h2>
+
+          <h3>语言学基础</h3>
+          <p>理解NLP需要掌握一些基本的语言学概念：</p>
+          <ul>
+            <li><strong>音系学</strong>：研究语音的组织和功能</li>
+            <li><strong>形态学</strong>：研究词的结构和构词法</li>
+            <li><strong>句法学</strong>：研究句子的结构和组成规则</li>
+            <li><strong>语义学</strong>：研究语言表达的含义</li>
+            <li><strong>语用学</strong>：研究语言在特定上下文中的使用</li>
+          </ul>
+
+          <h3>文本预处理</h3>
+          <p>文本预处理是NLP流程中的重要步骤，包括：</p>
+          <ul>
+            <li><strong>分词</strong>：将文本分割成单词或词组</li>
+            <li><strong>词形还原</strong>：将词转换为其基本形式（如"running"→"run"）</li>
+            <li><strong>词干提取</strong>：提取词的词干（如"fishing"→"fish"）</li>
+            <li><strong>停用词去除</strong>：去除常见但信息量少的词（如"the"、"is"）</li>
+            <li><strong>标准化</strong>：处理大小写、标点、特殊字符等</li>
+          </ul>
+
+          <h3>文本表示</h3>
+          <p>将文本转换为计算机可处理的数值表示是NLP的关键步骤：</p>
+          <ul>
+            <li><strong>One-Hot编码</strong>：将每个词表示为一个只有一个元素为1，其余为0的向量</li>
+            <li><strong>词袋模型(BoW)</strong>：统计文档中每个词的出现次数</li>
+            <li><strong>TF-IDF</strong>：考虑词频和逆文档频率的文本表示方法</li>
+            <li><strong>词嵌入</strong>：将词映射到低维连续向量空间（如Word2Vec、GloVe）</li>
+            <li><strong>上下文嵌入</strong>：生成考虑上下文的词表示（如BERT、ELMo）</li>
+          </ul>
+        </article>
+
+        <article id="tasks" class="content-card">
+          <h2>NLP的基本任务</h2>
+
+          <h3>文本分类</h3>
+          <p>将文本分配到预定义的类别中，应用包括：</p>
+          <ul>
+            <li>情感分析：判断文本表达的情感倾向</li>
+            <li>垃圾邮件检测：识别垃圾邮件</li>
+            <li>主题分类：确定文本的主题或领域</li>
+            <li>意图识别：理解用户查询的目的</li>
+          </ul>
+
+          <h3>序列标注</h3>
+          <p>为文本序列中的每个元素分配标签，应用包括：</p>
+          <ul>
+            <li>词性标注：标识每个词的词性（名词、动词等）</li>
+            <li>命名实体识别：识别文本中的人名、地名、组织名等</li>
+            <li>分块：识别句子中的短语结构</li>
+          </ul>
+
+          <h3>文本生成</h3>
+          <p>生成自然、流畅的文本，应用包括：</p>
+          <ul>
+            <li>机器翻译：将文本从一种语言翻译成另一种语言</li>
+            <li>文本摘要：生成文档的简短摘要</li>
+            <li>对话系统：生成对话回复</li>
+            <li>内容创作：生成文章、故事或诗歌</li>
+          </ul>
+
+          <h3>信息提取</h3>
+          <p>从非结构化文本中提取结构化信息，应用包括：</p>
+          <ul>
+            <li>关系提取：识别实体之间的关系</li>
+            <li>事件提取：识别文本中描述的事件及其参与者</li>
+            <li>观点挖掘：提取文本中表达的观点和态度</li>
+          </ul>
+
+          <h3>问答系统</h3>
+          <p>回答用自然语言提出的问题，类型包括：</p>
+          <ul>
+            <li>事实型问答：回答关于事实的问题（如"北京的人口是多少？"）</li>
+            <li>开放域问答：回答广泛领域的问题</li>
+            <li>阅读理解：基于给定文本回答问题</li>
+          </ul>
+        </article>
+
+        <article id="metrics" class="content-card">
+          <h2>NLP评估指标</h2>
+          <p>评估NLP系统性能的常用指标包括：</p>
+
+          <h3>分类任务指标</h3>
+          <ul>
+            <li><strong>准确率(Accuracy)</strong>：正确预测的样本比例</li>
+            <li><strong>精确率(Precision)</strong>：被预测为正类的样本中真正为正类的比例</li>
+            <li><strong>召回率(Recall)</strong>：真正为正类的样本中被正确预测的比例</li>
+            <li><strong>F1分数</strong>：精确率和召回率的调和平均</li>
+          </ul>
+
+          <h3>生成任务指标</h3>
+          <ul>
+            <li><strong>BLEU</strong>：评估生成文本与参考文本的n-gram重叠度</li>
+            <li><strong>ROUGE</strong>：评估生成摘要与参考摘要的重叠度</li>
+            <li><strong>METEOR</strong>：考虑同义词和词形变化的评估指标</li>
+            <li><strong>困惑度(Perplexity)</strong>：评估语言模型预测下一个词的能力</li>
+          </ul>
+
+          <h3>人工评估</h3>
+          <p>对于许多NLP任务，特别是生成任务，人工评估仍然是重要的评估方法，通常考虑以下方面：</p>
+          <ul>
+            <li>流畅性：文本是否自然流畅</li>
+            <li>连贯性：内容是否逻辑连贯</li>
+            <li>相关性：内容是否与任务相关</li>
+            <li>信息性：是否提供了有用信息</li>
+          </ul>
+        </article>
+
+        <article id="challenges" class="content-card">
+          <h2>NLP的挑战</h2>
+          <p>尽管NLP技术取得了巨大进展，但仍面临许多挑战：</p>
+
+          <h3>语言的复杂性</h3>
+          <ul>
+            <li><strong>歧义性</strong>：语言表达常常存在多种解释</li>
+            <li><strong>上下文依赖</strong>：理解语言需要考虑上下文</li>
+            <li><strong>隐含信息</strong>：人类交流中有大量隐含但未明确表达的信息</li>
+            <li><strong>语言变化</strong>：语言不断演变，新词和新用法不断出现</li>
+          </ul>
+
+          <h3>技术挑战</h3>
+          <ul>
+            <li><strong>低资源语言</strong>：对于训练数据有限的语言，NLP技术效果有限</li>
+            <li><strong>领域适应</strong>：在特定领域训练的模型难以适应其他领域</li>
+            <li><strong>计算资源</strong>：大型语言模型需要大量计算资源</li>
+            <li><strong>解释性</strong>：深度学习模型的决策过程难以解释</li>
+          </ul>
+
+          <h3>伦理与社会挑战</h3>
+          <ul>
+            <li><strong>偏见与公平性</strong>：NLP系统可能继承和放大训练数据中的偏见</li>
+            <li><strong>隐私问题</strong>：处理大量文本数据可能涉及隐私问题</li>
+            <li><strong>误用风险</strong>：NLP技术可能被用于生成虚假信息或进行欺诈</li>
+            <li><strong>就业影响</strong>：自动化文本处理可能影响某些职业</li>
+          </ul>
+        </article>
+
+        <article id="resources" class="content-card">
+          <h2>学习资源</h2>
+          <p>以下是一些学习NLP的优质资源：</p>
+
+          <h3>在线课程</h3>
+          <ul>
+            <li>斯坦福大学CS224n：深度学习自然语言处理</li>
+            <li>Coursera上的自然语言处理专项课程</li>
+            <li>Fast.ai的NLP课程</li>
+            <li>Hugging Face的NLP课程</li>
+          </ul>
+
+          <h3>书籍</h3>
+          <ul>
+            <li>《自然语言处理综论》(Speech and Language Processing) - Dan Jurafsky & James H. Martin</li>
+            <li>《Python自然语言处理》(Natural Language Processing with Python) - Steven Bird, Ewan Klein & Edward Loper</li>
+            <li>《深度学习自然语言处理》(Neural Network Methods for Natural Language Processing) - Yoav Goldberg</li>
+          </ul>
+
+          <h3>工具与库</h3>
+          <ul>
+            <li><strong>NLTK</strong>：Python自然语言处理工具包</li>
+            <li><strong>spaCy</strong>：工业级自然语言处理库</li>
+            <li><strong>Transformers</strong>：Hugging Face的预训练模型库</li>
+            <li><strong>Gensim</strong>：主题建模和文档相似性分析库</li>
+            <li><strong>Stanford CoreNLP</strong>：Java自然语言处理工具包</li>
+          </ul>
+
+          <h3>数据集</h3>
+          <ul>
+            <li><strong>GLUE</strong>：通用语言理解评估基准</li>
+            <li><strong>SQuAD</strong>：斯坦福问答数据集</li>
+            <li><strong>CoNLL</strong>：计算自然语言学会议数据集</li>
+            <li><strong>IMDB</strong>：电影评论情感分析数据集</li>
+            <li><strong>WMT</strong>：机器翻译数据集</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <h3>目录</h3>
+          <ul class="sidebar-links">
+            <li><a href="#intro">什么是自然语言处理？</a></li>
+            <li><a href="#history">NLP的发展历史</a></li>
+            <li><a href="#concepts">NLP的核心概念</a></li>
+            <li><a href="#tasks">NLP的基本任务</a></li>
+            <li><a href="#metrics">NLP评估指标</a></li>
+            <li><a href="#challenges">NLP的挑战</a></li>
+            <li><a href="#resources">学习资源</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>相关资源</h3>
+          <ul class="sidebar-links">
+            <li><a href="models.html">NLP模型与算法</a></li>
+            <li><a href="applications.html">NLP应用场景</a></li>
+            <li><a href="blog.html">最新技术博客</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>推荐工具</h3>
+          <ul class="sidebar-links">
+            <li><a href="https://spacy.io/" target="_blank">spaCy</a></li>
+            <li><a href="https://huggingface.co/transformers/" target="_blank">Hugging Face Transformers</a></li>
+            <li><a href="https://www.nltk.org/" target="_blank">NLTK</a></li>
+            <li><a href="https://stanfordnlp.github.io/CoreNLP/" target="_blank">Stanford CoreNLP</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>关于我们</h3>
+          <p>NLP知识库致力于提供高质量的自然语言处理学习资源，帮助开发者和研究者掌握NLP技术。</p>
+        </div>
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="basics.html">基础知识</a></li>
+            <li><a href="models.html">模型与算法</a></li>
+            <li><a href="applications.html">应用场景</a></li>
+            <li><a href="blog.html">技术博客</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>联系我们</h3>
+          <p>有任何问题或建议？请随时联系我们！</p>
+          <a href="mailto:contact@nlpknowledge.com" class="contact-link">contact@nlpknowledge.com</a>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/nlp-knowledge" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/nlp_knowledge" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/nlp-knowledge" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" id="wechat-link"><i class="fab fa-weixin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; 2025 NLP知识库 - 探索自然语言处理的奇妙世界
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="wechat-popup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h3>扫描关注我们的微信公众号</h3>
+    <div class="qrcode">
+      <img src="images/qrcode.png" alt="微信公众号二维码">
+    </div>
+    <p>公众号：NLP知识库</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

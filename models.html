@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然语言处理知识库 - 模型与算法</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">NLP知识库</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="basics.html">基础知识</a></li>
+                    <li><a href="models.html" class="active">模型与算法</a></li>
+                    <li><a href="applications.html">应用场景</a></li>
+                    <li><a href="blog.html">技术博客</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <h1>NLP模型与算法</h1>
+        <p>探索从传统统计方法到最新深度学习模型的NLP技术演进</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="content-grid">
+            <div class="main-content">
+                <article id="overview" class="content-card">
+                    <h2>NLP模型发展概述</h2>
+                    <p>自然语言处理模型的发展经历了从规则系统到统计方法，再到深度学习的演变过程。每一次技术革新都大幅提升了NLP系统的性能和能力范围。</p>
+                    <p>以下我们将介绍NLP领域的主要模型类型，从传统方法到最新的预训练语言模型。</p>
+                </article>
+
+                <article id="traditional" class="content-card">
+                    <h2>传统NLP模型</h2>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>基于规则的方法</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>基于规则的NLP系统使用人工编写的语言规则和词典来处理文本。这些系统在特定领域可以表现良好，但难以扩展到复杂或开放域的任务。</p>
+                            <p>代表性系统包括早期的机器翻译系统和ELIZA对话系统。</p>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">规则系统</span>
+                                <span class="tag">词典</span>
+                                <span class="tag">语法分析</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>统计方法</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>统计NLP方法使用概率模型从大量文本数据中学习语言模式。这些方法比规则系统更灵活，能够处理语言的多样性和歧义性。</p>
+                            <p>代表性模型包括：</p>
+                            <ul>
+                                <li><strong>n-gram语言模型</strong>：基于前n-1个词预测下一个词的概率</li>
+                                <li><strong>隐马尔可夫模型(HMM)</strong>：用于词性标注和命名实体识别</li>
+                                <li><strong>条件随机场(CRF)</strong>：序列标注任务的强大工具</li>
+                            </ul>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">统计学习</span>
+                                <span class="tag">概率模型</span>
+                                <span class="tag">机器学习</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="deep-learning" class="content-card">
+                    <h2>深度学习模型</h2>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>词嵌入</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>词嵌入是将词映射到低维向量空间的技术，能够捕捉词之间的语义关系。这一技术是现代NLP的基础。</p>
+                            <p>代表性模型：</p>
+                            <ul>
+                                <li><strong>Word2Vec</strong>：使用CBOW或Skip-gram架构学习词向量</li>
+                                <li><strong>GloVe</strong>：结合全局矩阵分解和局部上下文窗口方法</li>
+                                <li><strong>FastText</strong>：考虑子词信息的词嵌入方法</li>
+                            </ul>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">词表示</span>
+                                <span class="tag">语义空间</span>
+                                <span class="tag">分布式表示</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>循环神经网络(RNN)</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>RNN是一类能够处理序列数据的神经网络，通过隐藏状态保存序列信息，适合处理文本等序列数据。</p>
+                            <p>代表性变体：</p>
+                            <ul>
+                                <li><strong>LSTM</strong>：长短期记忆网络，解决了传统RNN的长期依赖问题</li>
+                                <li><strong>GRU</strong>：门控循环单元，LSTM的简化版本，参数更少但性能相当</li>
+                                <li><strong>双向RNN</strong>：同时考虑序列的前向和后向信息</li>
+                            </ul>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">序列建模</span>
+                                <span class="tag">长期依赖</span>
+                                <span class="tag">神经网络</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>注意力机制与Transformer</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>注意力机制允许模型在处理序列时关注相关部分，大大提高了模型处理长序列的能力。Transformer架构完全基于注意力机制，成为现代NLP的基础架构。</p>
+                            <p>Transformer的核心组件：</p>
+                            <ul>
+                                <li><strong>多头自注意力</strong>：允许模型同时关注序列的不同位置</li>
+                                <li><strong>位置编码</strong>：为模型提供序列位置信息</li>
+                                <li><strong>前馈神经网络</strong>：在每个位置独立应用的全连接层</li>
+                            </ul>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">注意力机制</span>
+                                <span class="tag">并行计算</span>
+                                <span class="tag">长距离依赖</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="pretrained" class="content-card">
+                    <h2>预训练语言模型</h2>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>BERT及其变体</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>BERT(Bidirectional Encoder Representations from Transformers)是一种预训练语言模型，通过掩码语言建模和下一句预测任务进行预训练，能够生成强大的上下文相关的词表示。</p>
+                            <p>BERT的主要变体：</p>
+                            <ul>
+                                <li><strong>RoBERTa</strong>：移除了下一句预测任务，使用更多数据和更大批量训练</li>
+                                <li><strong>DistilBERT</strong>：BERT的轻量级版本，保持性能的同时大幅减少参数量</li>
+                                <li><strong>ALBERT</strong>：通过参数共享减少模型大小，同时提高训练效率</li>
+                                <li><strong>ELECTRA</strong>：使用替换检测而非掩码预测作为预训练任务</li>
+                            </ul>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">预训练</span>
+                                <span class="tag">双向编码器</span>
+                                <span class="tag">迁移学习</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>GPT系列</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>GPT(Generative Pre-trained Transformer)系列是基于Transformer解码器的自回归语言模型，通过预测下一个词进行预训练，特别擅长文本生成任务。</p>
+                            <p>GPT系列的发展：</p>
+                            <ul>
+                                <li><strong>GPT-1</strong>：首个大规模预训练Transformer语言模型</li>
+                                <li><strong>GPT-2</strong>：参数量达到15亿，展示了零样本学习能力</li>
+                                <li><strong>GPT-3</strong>：1750亿参数，展示了惊人的少样本学习能力</li>
+                                <li><strong>GPT-4</strong>：多模态能力，推理能力大幅提升</li>
+                            </ul>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">自回归</span>
+                                <span class="tag">文本生成</span>
+                                <span class="tag">大规模模型</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-header">
+                            <h3>其他重要模型</h3>
+                        </div>
+                        <div class="model-body">
+                            <p>除了BERT和GPT系列，还有许多其他重要的预训练语言模型：</p>
+                            <ul>
+                                <li><strong>T5</strong>：将所有NLP任务统一为文本到文本的格式</li>
+                                <li><strong>XLNet</strong>：使用排列语言建模克服BERT的局限性</li>
+                                <li><strong>BART</strong>：结合了BERT的双向编码器和GPT的自回归解码器</li>
+                                <li><strong>DeBERTa</strong>：使用解耦注意力机制和增强型掩码解码器</li>
+                                <li><strong>PaLM</strong>：Google的5400亿参数模型，使用Pathways系统训练</li>
+                                <li><strong>Claude</strong>：Anthropic开发的对话模型，注重安全性和有用性</li>
+                            </ul>
+                        </div>
+                        <div class="model-footer">
+                            <div class="model-tags">
+                                <span class="tag">多样架构</span>
+                                <span class="tag">特定任务优化</span>
+                                <span class="tag">前沿研究</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-card">
+                    <h3>目录</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="#top">NLP模型发展概述</a></li>
+                        <li><a href="#traditional">传统NLP模型</a></li>
+                        <li><a href="#deep-learning">深度学习模型</a></li>
+                        <li><a href="#pretrained">预训练语言模型</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>相关资源</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="basics.html">NLP基础知识</a></li>
+                        <li><a href="applications.html">NLP应用场景</a></li>
+                        <li><a href="blog.html">最新技术博客</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
